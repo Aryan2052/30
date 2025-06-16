@@ -1,0 +1,92 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Name Greeting App by Dm</title>
+  <style>
+    body {
+      background-color: #a8dadc;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      background-color: #1d3557;
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      width: 60%;
+      margin: auto;
+    }
+
+    form {
+      margin-top: 40px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 20px;
+      border: 2px solid #457b9d;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      padding: 10px 30px;
+      font-size: 20px;
+      background-color: #1d3557;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #457b9d;
+    }
+
+    #msg {
+      margin-top: 30px;
+      font-size: 24px;
+      color: #1d3557;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Name Greeting App</h1>
+
+  <form onsubmit="return show();">
+    <input type="text" id="name" placeholder="Enter your name" />
+    <br><br>
+    <input type="submit" value="Greet Me" />
+  </form>
+
+  <div id="msg"></div>
+
+  <script>
+    function show() {
+      let name = document.getElementById("name").value.trim();
+      let msg = document.getElementById("msg");
+      let d = new Date();
+      let hr = d.getHours();
+
+      if (name === "") {
+        alert("Please enter your name!");
+        msg.innerHTML = "";
+        return false;
+      }
+
+      if (hr < 12)
+        msg.innerHTML = "🌞 Good Morning, " + name + "!";
+      else if (hr < 16)
+        msg.innerHTML = "☀️ Good Afternoon, " + name + "!";
+      else
+        msg.innerHTML = "🌇 Good Evening, " + name + "!";
+
+      return false;
+    }
+  </script>
+</body>
+</html>
