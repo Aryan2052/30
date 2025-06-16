@@ -4,8 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Even_Odd_app By Aryan</title>
+    <style>
+        *
+    </style>
 </head>
 <body>
+    <h1>Even Odd App</h1>
+
+    <form onsubmit="check()">
+        <input type=""number" id=""num" placeholder="Enter the value"/>
+        <br /><br />
+        <input type = "submit" value = "Method 1" class="btn"/>
+        <input type = "submit" value = "Method 2" class="btn"/>
+        <input type = "submit" value = "Method 3" class="btn"/>
+    </form>
+    <h2 id="msg"></h2>
+
+
+    <script>
+        function check(){
+            event.preventDefault();
+            let num = document.getElemtById("num");
+            let msg = document.getElementById("msg");
+            let action = document.activeElement.value;
+
+            //blank value
+            if(num.value==""){
+                alert("Pls enter integer");
+                msg.innerHtml="";
+                num.focus();
+                return;
+            }
+
+            //method1
+            if(action==="Method 1"){
+                let n = parseInt(num.value);
+                let r = "";
+                if(n%2==0) r = "Even";
+                else r = "odd";
+                msg.innerHTML="Ans by Method 1 is " + r;
+            }
+            else if(action==="Method 2"){
+                let n = parseInt(num.value);
+                let r = "";
+                switch(n%2){
+                    case 0: r = "Even"; break;
+                    case 1: r = "Odd"; break;
+                    case -1: r = "Odd"; break;
+                }
+                msg.innerHTML = "Ans by Method 2 is "+r; 
+            }
+            else if(action==="Method 3"){
+                let n = parseInt(num.value);
+                let r = "";
+                (n%2==0) ? r = "Even" : r="Odd";
+                msg.innerHTML = "Ans by Method 3 is " + r;
+            }
+        }
+    </script>
     
 </body>
 </html>
