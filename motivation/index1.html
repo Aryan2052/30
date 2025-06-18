@@ -1,0 +1,108 @@
+<html>
+<head>
+    <title> Motivational Msg App by Dhanashree </title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, #fbd786, #f7797d, #c084f5);
+            color: #222;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            background-color: #fff;
+            color: #2f2f2f;
+            padding: 25px 50px;
+            border-radius: 20px;
+            font-size: 3em;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            margin-bottom: 50px;
+            border: 2px solid #ccc;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            padding: 25px;
+            background-color: #ffffffdd;
+            border: 2px solid #33333322;
+            border-radius: 15px;
+            max-width: 90%;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+            color: #3a3a3a;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <h1> Motivational Message App </h1>
+    <br/><br/>
+    <h2 id="msg"></h2>
+
+    <script>
+        function show() {
+            let msg = document.getElementById("msg");
+
+            let data = [
+                "Growth begins where comfort ends.",
+                "Your future is created by what you do today, not tomorrow.",
+                "Failure is not the opposite of success — it’s a part of success.",
+                "The struggle you’re in today is developing the strength you need for tomorrow.",
+                "Don't wait for opportunity. Create it.",
+                "Discomfort is a sign that you're evolving.",
+                "Success is not for the chosen few, it’s for the few who choose.",
+                "Your mind will quit a thousand times before your body ever does.",
+                "Greatness isn’t luck — it’s built brick by brick.",
+                "You don’t find your worth in others — it’s already within you.",
+                "Be stubborn about your goals, and flexible about your methods.",
+                "Every expert was once a beginner who didn’t quit.",
+                "Let your hustle be louder than your excuses.",
+                "You are one decision away from a completely different life.",
+                "Discipline is choosing what you want most over what you want now.",
+                "Progress is progress, no matter how slow.",
+                "Your setbacks are setups for a stronger comeback.",
+                "Never forget why you started.",
+                "A river cuts through rock not because of its power, but because of its persistence.",
+                "You don’t grow when things are easy — you grow when you face challenges.",
+                "The pain you feel today is the strength you’ll use tomorrow.",
+                "Silence your doubts with your actions.",
+                "The best revenge is massive success.",
+                "You weren’t born to be average.",
+                "If you want to fly, give up everything that weighs you down.",
+                "Big dreams require bold actions.",
+                "You are not late — your journey is just different.",
+                "Some days you just have to create your own sunshine.",
+                "Confidence comes from preparation, not praise.",
+                "Don’t downgrade your dream to fit your reality. Upgrade your mindset.",
+                "The goal is progress, not perfection.",
+                "Winners focus on winning. Losers focus on winners.",
+                "Trust the timing of your life. Keep showing up.",
+                "Be so good they can’t ignore you.",
+                "Your energy introduces you before you even speak.",
+                "One day, all the sacrifices will make sense.",
+                "The moment you’re ready to quit is usually the moment right before a miracle happens.",
+                "Your best project is YOU.",
+                "Dreams don’t work unless you do.",
+                "Never forget: mountains are climbed one step at a time."
+            ];
+
+            let r = parseInt(Math.random() * data.length);
+            msg.innerHTML = data[r];
+        }
+
+        show();
+        setInterval(show, 4000);
+    </script>
+</body>
+</html>
