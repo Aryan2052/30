@@ -1,0 +1,174 @@
+<html>
+<head>
+    <title>Food App by DM</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+            transition: all 0.3s ease-in-out;
+        }
+
+        body {
+            background: linear-gradient(to right, #f8ffae, #43c6ac);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: #ffffffdd;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #1f1f1f;
+            color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 15px;
+            font-size: 48px;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-size: 28px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        input[type="text"] {
+            padding: 10px 20px;
+            margin-top: 10px;
+            width: 80%;
+            font-size: 24px;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: #43c6ac;
+            background-color: #e8fff9;
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .radio-group label {
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        input[type="radio"] {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
+        input[type="submit"] {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background: #ff6f61;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="submit"]:hover {
+            background: #e85c4a;
+            transform: scale(1.05);
+        }
+
+        h2 {
+            margin-top: 30px;
+            font-size: 28px;
+            color: #1f1f1f;
+            background: #ffffffaa;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>FOOD APP</h1>
+        <form onsubmit="show()">
+            <label>Enter name:</label><br/>
+            <input type="text" id="name" placeholder="Enter your name"><br/><br/>
+
+            <div class="radio-group">
+                <label><input type="radio" name="f" id="ni" /> North Indian</label>
+                <label><input type="radio" name="f" id="si" /> South Indian</label>
+                <label><input type="radio" name="f" id="ff" /> Fast Food</label>
+            </div>
+
+            <input type="submit" value="Submit">
+            <h2 id="msg"></h2>
+        </form>
+    </div>
+
+    <script>
+        function show() {
+            event.preventDefault();
+            let name = document.getElementById("name");
+            let msg = document.getElementById("msg");
+            let ni = document.getElementById("ni");
+            let si = document.getElementById("si");
+            let ff = document.getElementById("ff");
+
+            if (name.value === "") {
+                alert("Please enter name!");
+                msg.innerHTML = "";
+                name.focus();
+                return;
+            }
+
+            if (name.value.trim() === "") {
+                alert("Name cannot be blank spaces!");
+                msg.innerHTML = "";
+                name.value = "";
+                name.focus();
+                return;
+            }
+
+            if (!name.value.match(/^[A-Za-z ]+$/)) {
+                alert("Name should contain only alphabets!");
+                msg.innerHTML = "";
+                name.value = "";
+                name.focus();
+                return;
+            }
+
+            let choice = "";
+            if (ni.checked) choice = "North Indian";
+            else if (si.checked) choice = "South Indian";
+            else if (ff.checked) choice = "Fast Food";
+            else {
+                alert("Please select a food type!");
+                return;
+            }
+
+            msg.innerHTML = `Name: <strong>${name.value}</strong> | Choice: <strong>${choice}</strong>`;
+        }
+    </script>
+</body>
+</html>
