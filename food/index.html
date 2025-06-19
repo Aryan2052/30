@@ -23,7 +23,47 @@
         </form>
     </div>
 
-    
+    <script>
+        function show(){
+            event.preventDefault();
+            let name = document.getElementById("name");
+            let msg = document.getElementById("msg");
+            let ni = document.getElementById("ni");
+            let fi = document.getElementById("fi");
+            let si = document.getElementById("si");
+
+            //is the name is not provided
+            if(name===""){
+                alert("Pls enter a valid name");
+                msg.innerHTML = "";
+                name.focus();
+                return;
+            }
+            if(name.value.trim()===""){
+                alert("Nmae cannot be blank spaces");
+                msg.innerHTML = "";
+                name.value = "";
+                name.focus();
+                return;
+            }
+            if(!name.value.match(/^[A-Za-z ]+$/)){
+                alert("Name should contain only alphabets");
+                massg.innerHTML="";
+                name.value="";
+                name.focus();
+                return;
+            }
+            let choice="";
+            if(ni.checked) choice="North Indian";
+            else if(si.checked) choice="South Indian";
+            else if(fi.checked) choice="Nort-East Indian";
+            else{
+                alert("Pls select a food type");
+                return;
+            }
+            msg.innerHTML=`Name: <strong>${name.value}</strong> | Choice: <strong>${choice}</strong>`;
+        }
+    </script>
     
 </body>
 </html>
