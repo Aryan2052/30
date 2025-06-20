@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flashcards</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      min-height: 100vh;
+      text-align: center;
+      padding: 40px;
+      color: #333;
+    }
+
+    h1 {
+      color: #222;
+      font-size: 36px;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 420px;
+      height: 240px;
+      perspective: 1000px;
+      margin: auto;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.7s ease;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flip .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      padding: 25px;
+      background: white;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s;
+    }
+
+    .flip-card-front {
+      background: #ffffff;
+    }
+
+    .flip-card-back {
+      background: #f1f1f1;
+      transform: rotateY(180deg);
+    }
+
+    #next-btn {
+      margin-top: 60px;
+      padding: 14px 30px;
+      font-size: 18px;
+      border: none;
+      background: #222;
+      color: white;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    #next-btn:hover {
+      background-color: #444;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1 id="topic-title">Flashcards</h1>
+
+  <div class="flip-card" onclick="flipCard()" id="card">
+    <div class="flip-card-inner" id="card-inner">
+      <div class="flip-card-front" id="card-front">Front</div>
+      <div class="flip-card-back" id="card-back">Back</div>
+    </div>
+  </div>
+
+  <button id="next-btn" onclick="nextCard()">Next</button>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const topic = urlParams.get('topic') || 'javascript';
+    document.getElementById('topic-title').innerText = topic.toUpperCase() + " Flashcards";
+
+    const flashcards = {
+      javascript: [
+        { q: "What is a closure?", a: "A function that remembers variables from its outer scope." },
+        { q: "What does '===' do?", a: "Compares value and type without converting types." },
+        { q: "What is DOM?", a: "Document Object Model — structure of web pages in JavaScript." }
+      ],
+      python: [
+        { q: "What is a list in Python?", a: "A collection that is ordered and changeable." },
+        { q: "What does 'len()' do?", a: "Returns the number of items in an object." },
+        { q: "What is indentation used for?", a: "To define blocks of code (like if, loops, functions)." }
+      ],
+      java: [
+        { q: "What is JVM?", a: "Java Virtual Machine, runs Java bytecode." },
+        { q: "What is a class in Java?", a: "A blueprint for creating objects." },
+        { q: "What is inheritance?", a: "One class acquiring properties of another." }
+      ]
+    };
+
+    let currentIndex = 0;
+    const front = document.getElementById("card-front");
+    const back = document.getElementById("card-back");
+    const card = document.getElementById("card");
+
+    function showCard() {
+      const current = flashcards[topic][currentIndex];
+      front.innerText = current.q;
+      back.innerText = current.a;
+      card.classList.remove("flip");
+    }
+
+    function flipCard() {
+      card.classList.toggle("flip");
+    }
+
+    function nextCard() {
+      currentIndex = (currentIndex + 1) % flashcards[topic].length;
+      showCard();
+    }
+
+    // Load first card
+    showCard();
+  </script>
+</body>
+</html>
