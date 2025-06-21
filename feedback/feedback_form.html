@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart_Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Teacher Feedback Form</h1>
+        <input type="text" id="studentName" palceholder="Student name">
+        <input type="text" id="subject" placeholder="Subject">
+
+        <label>Performance:</label>
+        <select id="performance">
+            <option value="excellent">excellent</option>
+            <option value="good">good</option>
+            <option value="average">average</option>
+            <option value="poor">Needs Improvement</option>
+        </select>
+
+        <label>Behavior:</label>
+        <select id="behavior">
+            <option value="great">Great</option>
+            <option value="respectful">Respectful</option>
+            <option value="distracted">Distracted</option>
+            <option value="disruptive">Disruptive</option>
+
+        </select>
+
+        <button onclick="generateFeedback()">Generate Feedback</button>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>
