@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Password Checker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>🔐 Enter Your Password</h2>
+    <form id="passwordForm">
+      <input type="password" id="password" placeholder="Type password..." required />
+      <button type="submit">Check Strength</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('passwordForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const pwd = document.getElementById('password').value;
+      localStorage.setItem('password', pwd);
+      window.location.href = 'result.html';
+    });
+  </script>
+</body>
+</html>
