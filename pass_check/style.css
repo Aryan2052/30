@@ -1,0 +1,111 @@
+/* Reset + Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+  background: linear-gradient(to right, #fceabb, #f8b500);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Container */
+.container {
+  background: #fff8e7;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  animation: popIn 0.4s ease-in-out;
+}
+
+/* Headings */
+.container h2 {
+  font-size: 1.8rem;
+  color: #ff7a00;
+  margin-bottom: 1.5rem;
+}
+
+/* Inputs */
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid #ffcc70;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+}
+
+input[type="password"]::placeholder {
+  color: #aaa;
+}
+
+/* Button */
+button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #333;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 122, 0, 0.3);
+}
+
+/* Link */
+a {
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  color: #ff7a00;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Result Text */
+#strength {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #333;
+}
+
+ul#suggestions {
+  margin-top: 1rem;
+  text-align: left;
+  padding-left: 1rem;
+  list-style-type: "🌼 ";
+  color: #666;
+}
+
+/* Animation */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
