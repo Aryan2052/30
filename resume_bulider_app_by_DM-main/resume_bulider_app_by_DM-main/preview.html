@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Preview</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="previewContainer" class="classic">
+    <button onclick="switchDesign()">Switch Design</button>
+    <div id="resume"></div>
+    <a href="download.html">Download</a> | <a href="history.html">History</a>
+  </div>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem('resumeData')) || {};
+    const container = document.getElementById('resume');
+    container.innerHTML = `
+      <h2>${data.name}</h2>
+      <h3>Skills</h3><ul>${data.skills.split(',').map(skill => `<li>${skill.trim()}</li>`).join('')}</ul>
+      <h3>Projects</h3><ul>${data.projects.split(',').map(proj => `<li>${proj.trim()}</li>`).join('')}</ul>
+    `;
+    
+    // Save to history
+    let history = JSON.parse(localStorage.getItem('resumeHistory')) || [];
+    history.push({ ...data, timestamp: new Date().toLocaleString() });
+    localStorage.setItem('resumeHistory', JSON.stringify(history));
+
+    function switchDesign() {
+      document.getElementById('previewContainer').classList.toggle('modern');
+      document.getElementById('previewContainer').classList.toggle('classic');
+    }
+  </script>
+</body>
+</html>

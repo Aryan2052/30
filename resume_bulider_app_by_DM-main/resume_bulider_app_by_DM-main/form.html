@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder - Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Resume Builder</h1>
+  <form id="resumeForm">
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <textarea id="skills" placeholder="Skills (comma separated)"></textarea><br>
+    <textarea id="projects" placeholder="Projects (comma separated)"></textarea><br>
+    <button type="submit">Preview Resume</button>
+  </form>
+
+  <script>
+    document.getElementById('resumeForm').onsubmit = function(e) {
+      e.preventDefault();
+      const data = {
+        name: document.getElementById('name').value,
+        skills: document.getElementById('skills').value,
+        projects: document.getElementById('projects').value,
+      };
+      localStorage.setItem('resumeData', JSON.stringify(data));
+      window.location.href = 'preview.html';
+    }
+  </script>
+</body>
+</html>

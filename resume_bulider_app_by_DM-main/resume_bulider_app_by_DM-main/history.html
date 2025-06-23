@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume History</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Resume History</h2>
+  <ul id="historyList"></ul>
+  <a href="form.html">Back to Form</a>
+
+  <script>
+    const history = JSON.parse(localStorage.getItem('resumeHistory')) || [];
+    const list = document.getElementById('historyList');
+    history.reverse().forEach(entry => {
+      const li = document.createElement('li');
+      li.innerHTML = `<strong>${entry.name}</strong> - ${entry.timestamp}`;
+      list.appendChild(li);
+    });
+  </script>
+</body>
+</html>
