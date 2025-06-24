@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Festival Finder</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Festival Finder 🇮🇳</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="festivals.html">Festivals</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="home">
+    <section class="picker">
+      <h2>Find Festivals in Maharashtra by Month:</h2>
+      <div class="inputs">
+        <label for="month">Month:</label>
+        <select id="month">
+          <option value="">Select</option>
+          <option value="january">January</option>
+          <option value="february">February</option>
+          <option value="march">March</option>
+          <option value="april">April</option>
+          <option value="may">May</option>
+          <option value="june">June</option>
+          <option value="july">July</option>
+          <option value="august">August</option>
+          <option value="september">September</option>
+          <option value="october">October</option>
+          <option value="november">November</option>
+          <option value="december">December</option>
+        </select>
+        <button id="searchBtn">Search Festivals</button>
+      </div>
+    </section>
+    <section id="results"></section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Festival Finder | Celebrate Culture 🌸 | By Dhanashree Mahajan</p>
+  </footer>
+</body>
+</html>

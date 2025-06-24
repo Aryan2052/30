@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Explore Maharashtra Festivals</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffaf1;
+      padding: 2rem;
+      color: #333;
+    }
+    header h1 {
+      text-align: center;
+      color: #d35400;
+      margin-bottom: 1rem;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-bottom: 2rem;
+      padding-left: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .festival-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .festival-card {
+      background: #fff8e6;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .festival-card:hover {
+      transform: translateY(-5px);
+    }
+    .festival-card h3 {
+      margin-top: 0.5rem;
+      color: #e67e22;
+    }
+    .festival-card p {
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Explore Maharashtra's Festivals</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="festivals.html">Festivals</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="festival-gallery">
+      <div class="festival-card">
+        <h3>January – Makar Sankranti</h3>
+        <p>Kites fly high and sweets are shared to mark the harvest season in Maharashtra.</p>
+      </div>
+      <div class="festival-card">
+        <h3>February – Shiv Jayanti</h3>
+        <p>Honoring Chhatrapati Shivaji Maharaj with pride and patriotic celebrations.</p>
+      </div>
+      <div class="festival-card">
+        <h3>March – Holi</h3>
+        <p>Festival of colors and unity with vibrant powders and joyful gatherings.</p>
+      </div>
+      <div class="festival-card">
+        <h3>April – Gudhi Padwa</h3>
+        <p>Maharashtrian New Year marked with Gudhi flags and traditional meals.</p>
+      </div>
+      <div class="festival-card">
+        <h3>May – Akshaya Tritiya</h3>
+        <p>One of the most auspicious days for beginnings and investments.</p>
+      </div>
+      <div class="festival-card">
+        <h3>June – Vat Purnima</h3>
+        <p>Married women tie threads around banyan trees praying for their husbands' long lives.</p>
+      </div>
+      <div class="festival-card">
+        <h3>July – Ashadi Ekadashi</h3>
+        <p>Mass pilgrimage to Pandharpur in devotion to Lord Vitthal.</p>
+      </div>
+      <div class="festival-card">
+        <h3>August – Raksha Bandhan</h3>
+        <p>Bond of love between brothers and sisters celebrated with rakhi and gifts.</p>
+      </div>
+      <div class="festival-card">
+        <h3>September – Ganesh Chaturthi</h3>
+        <p>Maharashtra’s biggest festival, celebrating the birth of Lord Ganesha.</p>
+      </div>
+      <div class="festival-card">
+        <h3>October – Navratri</h3>
+        <p>Nine nights of worship, fasting, dancing, and devotion to Goddess Durga.</p>
+      </div>
+      <div class="festival-card">
+        <h3>November – Diwali</h3>
+        <p>Festival of Lights celebrated with lamps, sweets, and fireworks.</p>
+      </div>
+      <div class="festival-card">
+        <h3>December – Datta Jayanti</h3>
+        <p>Birth anniversary of Lord Dattatreya with spiritual celebrations.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
