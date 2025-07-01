@@ -1,0 +1,141 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
+body {
+  background-color: #f4f7f8;
+  color: #333;
+  padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #222;
+  padding: 15px;
+  text-align: center;
+  border-radius:20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #00d1b2;
+}
+
+/* Main container */
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap:30px;
+  margin-top: 40px;
+  height:60%;
+}
+
+/* Feature Blocks */
+.check-container-home,
+.count-container-home {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  width: 30%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  text-align:center;
+  justify-self:center;
+  align-items:center;
+  transition: all .2s ease-in-out;
+}
+
+.check-container-home h2,
+.count-container-home h2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  min-height: 200px; 
+}
+
+h1 {
+  font-size: 36px;
+  color: #00a89d;
+  margin-bottom: 10px;
+  text-align:center;
+  margin-top:40px;
+}
+
+.check-container-home:hover,
+.count-container-home:hover{
+	transform:scale(1.01);
+}
+h2 {
+  font-size: 18px;
+  color: #555;
+  font-weight: normal;
+}
+
+/* Form Styling */
+form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 30px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  background-color: #00a89d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #008a82;
+}
+
+/* Result Messages */
+#msg1, #count, #word {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #444;
+}
+
+/* 404 Page */
+.error-page{
+  text-align: center;
+  margin-top: 60px;
+}

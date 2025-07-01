@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title> Anagrams App </title>
+		<link rel="stylesheet" href="mystyle.css"> </link> 
+	</head>	
+	<body>
+	<div class="navbar">
+		<a href="index.html"> Home </a>
+		<a href="check.html"> Anagram Checker </a>
+		<a href="count.html"> Anagram Counter </a>
+	</div>
+	<h1> Count Anagrams </h1>
+	<div class="container">
+		<form onsubmit="count()">
+			<label> Enter Input String </label>
+			<input type="text" id="input" placeholder="Enter Input String" /> 
+			<br/><br/>
+			<label> Enter String to find Anagrams of: </label>
+			<input type="text" id="str" placeholder="Enter String to find Anagrams of: " />
+			<br/><br/>
+			<input type="submit" />
+		</form>
+		<h2 id="count" > </h2>
+		<h3 id="word" > </h2>
+	</div>
+
+	<script src="myscript.js"> </script>
+	</body>
+	
+</html>
